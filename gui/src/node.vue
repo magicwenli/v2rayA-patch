@@ -133,6 +133,14 @@
         <div class="right">
           <b-button
             class="field mobile-small"
+            type="is-info"
+            @click="handleClickSetServer"
+          >
+            <i class="iconfont icon-cloud-sync" />
+            <span>更新Server</span>
+          </b-button>
+          <b-button
+            class="field mobile-small"
             type="is-primary"
             @click="handleClickCreate"
           >
@@ -1526,6 +1534,35 @@ export default {
       this.modalServerReadOnly = false;
       this.which = null;
       this.showModalServer = true;
+    },
+    handleClickSetServer() {
+      this.$axios({
+        url: apiRoot + "/setServer",
+        method: "get",
+        timeout: 0
+      }).then(res => {
+        handleResponse(
+          res,
+            this,
+            () => {
+              res.data.data.whiches.forEach(x => {
+                let server = locateServer(this.tableData, x);
+                server.pingLatency = x.pingLatency;
+              });
+              this.updateConnectView();
+            },
+            () => {
+              this.$buefy.toast.open({
+                message: res.data.message,
+                type: "is-warning",
+                position: "is-top",
+                queue: false,
+                duration: 5000
+              });
+              this.checkedRows.forEach(x => (x.pingLatency = ""));
+            }
+        );
+      });
     },
     handleClickModifyServer(row) {
       this.modalServerReadOnly = false;

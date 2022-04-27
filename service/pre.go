@@ -2,6 +2,15 @@ package main
 
 import (
 	"fmt"
+	"net"
+	"os"
+	"os/signal"
+	"path"
+	"runtime"
+	"sync"
+	"syscall"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	jsoniter "github.com/json-iterator/go"
 	jsonIteratorExtra "github.com/json-iterator/go/extra"
@@ -19,14 +28,6 @@ import (
 	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"github.com/v2rayA/v2rayA/server/router"
 	"github.com/v2rayA/v2rayA/server/service"
-	"net"
-	"os"
-	"os/signal"
-	"path"
-	"runtime"
-	"sync"
-	"syscall"
-	"time"
 )
 
 func checkEnvironment() {
@@ -291,9 +292,19 @@ func updateSubscriptions() {
 	wg.Wait()
 }
 
+func updateServer() {
+	_, err := service.SetServer()
+	if err != nil {
+		log.Error("[AutoUpdate] updateServer: Failed to update server -- err: %v", err)
+	} else {
+		log.Info("[AutoUpdate] updateServer: Complete updating server")
+	}
+}
+
 func initUpdatingTicker() {
 	conf.TickerUpdateGFWList = time.NewTicker(24 * time.Hour * 365 * 100)
 	conf.TickerUpdateSubscription = time.NewTicker(24 * time.Hour * 365 * 100)
+	conf.TickerUpdateServer = time.NewTicker(24 * time.Hour * 365 * 100)
 	go func() {
 		for range conf.TickerUpdateGFWList.C {
 			_, err := dat.CheckAndUpdateGFWList()
@@ -305,6 +316,11 @@ func initUpdatingTicker() {
 	go func() {
 		for range conf.TickerUpdateSubscription.C {
 			updateSubscriptions()
+		}
+	}()
+	go func() {
+		for range conf.TickerUpdateServer.C {
+			updateServer()
 		}
 	}()
 }

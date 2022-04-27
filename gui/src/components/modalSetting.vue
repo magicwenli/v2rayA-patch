@@ -318,6 +318,27 @@
           style="flex: 1"
         />
       </b-field>
+      <b-field label="自动更新Server" label-position="on-border">
+        <b-select v-model="serverAutoUpdateMode" expanded>
+          <option value="none">{{ $t("setting.options.off") }}</option>
+          <option value="auto_update">{{
+            $t("setting.options.updateSubWhenStart")
+          }}</option>
+          <option value="auto_update_at_intervals">{{
+            $t("setting.options.updateSubAtIntervals")
+          }}</option>
+        </b-select>
+        <cus-b-input
+          v-if="serverAutoUpdateMode === 'auto_update_at_intervals'"
+          ref="autoUpdateSubInput"
+          v-model="serverAutoUpdateIntervalHour"
+          custom-class="no-shadow"
+          type="number"
+          min="1"
+          validation-icon=" iconfont icon-alert"
+          style="flex: 1"
+        />
+      </b-field>
       <b-field
         :label="$t('setting.preferModeWhenUpdate')"
         label-position="on-border"
@@ -385,6 +406,8 @@ export default {
     pacAutoUpdateIntervalHour: 0,
     subscriptionAutoUpdateMode: "none",
     subscriptionAutoUpdateIntervalHour: 0,
+    serverAutoUpdateMode: "none",
+    serverAutoUpdateIntervalHour: 0,
     customSiteDAT: {},
     pacMode: "whitelist",
     showClockPicker: true,
@@ -482,6 +505,10 @@ export default {
             subscriptionAutoUpdateMode: this.subscriptionAutoUpdateMode,
             subscriptionAutoUpdateIntervalHour: parseInt(
               this.subscriptionAutoUpdateIntervalHour
+            ),
+            serverAutoUpdateMode: this.serverAutoUpdateMode,
+            serverAutoUpdateIntervalHour: parseInt(
+              this.serverAutoUpdateIntervalHour
             ),
             pacMode: this.pacMode,
             tcpFastOpen: this.tcpFastOpen,

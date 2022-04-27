@@ -52,5 +52,10 @@ func UpdateSetting(setting *configure.Setting) (err error) {
 	} else {
 		conf.TickerUpdateSubscription.Reset(24 * time.Hour * 365 * 100)
 	}
+	if setting.ServerAutoUpdateMode == configure.AutoUpdateAtIntervals {
+		conf.TickerUpdateServer.Reset(time.Duration(setting.ServerAutoUpdateIntervalHour) * time.Hour)
+	} else {
+		conf.TickerUpdateServer.Reset(24 * time.Hour * 365 * 100)
+	}
 	return
 }

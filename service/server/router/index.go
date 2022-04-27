@@ -4,6 +4,15 @@ import (
 	"crypto/md5"
 	"embed"
 	"fmt"
+	"io"
+	"io/fs"
+	"net"
+	"net/http"
+	"os"
+	"path"
+	"path/filepath"
+	"strings"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/v2rayA/v2rayA/common"
@@ -14,14 +23,6 @@ import (
 	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"github.com/v2rayA/v2rayA/server/controller"
 	"github.com/vearutop/statigz"
-	"io"
-	"io/fs"
-	"net"
-	"net/http"
-	"os"
-	"path"
-	"path/filepath"
-	"strings"
 )
 
 //go:embed web
@@ -174,6 +175,7 @@ func Run() error {
 		auth.DELETE("v2ray", controller.DeleteV2ray)
 		auth.GET("pingLatency", controller.GetPingLatency)
 		auth.GET("httpLatency", controller.GetHttpLatency)
+		auth.GET("setServer", controller.GetSetServer)
 		auth.GET("sharingAddress", controller.GetSharingAddress)
 		auth.GET("remoteGFWListVersion", controller.GetRemoteGFWListVersion)
 		auth.GET("setting", controller.GetSetting)

@@ -10,6 +10,7 @@ var (
 	RemoteVersion            = ""
 	TickerUpdateGFWList      *time.Ticker
 	TickerUpdateSubscription *time.Ticker
+	TickerUpdateServer       *time.Ticker
 )
 
 func IsDebug() bool {

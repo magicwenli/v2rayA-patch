@@ -13,6 +13,8 @@ type Setting struct {
 	GFWListAutoUpdateIntervalHour      int             `json:"pacAutoUpdateIntervalHour"`
 	SubscriptionAutoUpdateMode         AutoUpdateMode  `json:"subscriptionAutoUpdateMode"`
 	SubscriptionAutoUpdateIntervalHour int             `json:"subscriptionAutoUpdateIntervalHour"`
+	ServerAutoUpdateMode               AutoUpdateMode  `json:"serverAutoUpdateMode"`
+	ServerAutoUpdateIntervalHour       int             `json:"serverAutoUpdateIntervalHour"`
 	TcpFastOpen                        DefaultYesNo    `json:"tcpFastOpen"`
 	MuxOn                              DefaultYesNo    `json:"muxOn"`
 	Mux                                int             `json:"mux"`
