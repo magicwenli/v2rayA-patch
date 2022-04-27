@@ -2,11 +2,12 @@ package simpleobfs
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/pkg/plugin"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"net"
 	"net/url"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 type ObfsType int

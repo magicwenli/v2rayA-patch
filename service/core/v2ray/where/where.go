@@ -2,7 +2,6 @@ package where
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/conf"
 	"os"
 	"os/exec"
 	"path"
@@ -10,6 +9,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/conf"
 )
 
 type Variant string

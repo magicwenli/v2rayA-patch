@@ -1,10 +1,11 @@
 package controller
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
-	"github.com/v2rayA/v2rayA/server/service"
-	"net/http"
+	"github.com/magicwenli/v2rayA-patch/server/service"
 )
 
 var upgrader = websocket.Upgrader{

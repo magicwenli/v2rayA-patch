@@ -2,9 +2,10 @@ package iptables
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/common/cmds"
-	"github.com/v2rayA/v2rayA/db/configure"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/common/cmds"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
 )
 
 type tproxy struct {
@@ -150,7 +151,7 @@ ip6tables -w 2 -t mangle -A TP_MARK -j CONNMARK --save-mark
 `
 	}
 	return Setter{
-		Cmds:      commands,
+		Cmds: commands,
 	}
 }
 
@@ -188,6 +189,6 @@ ip6tables -w 2 -t mangle -X TP_MARK
 `
 	}
 	return Setter{
-		Cmds:      commands,
+		Cmds: commands,
 	}
 }

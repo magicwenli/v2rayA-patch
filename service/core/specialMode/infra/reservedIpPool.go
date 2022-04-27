@@ -1,9 +1,10 @@
 package infra
 
 import (
-	lru2 "github.com/v2rayA/v2rayA/infra/dataStructure/lru"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"sync"
+
+	lru2 "github.com/magicwenli/v2rayA-patch/infra/dataStructure/lru"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 type ReservedIpPool struct {

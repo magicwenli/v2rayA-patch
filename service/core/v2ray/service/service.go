@@ -3,11 +3,12 @@ package service
 import (
 	"bytes"
 	"fmt"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/core/v2ray/asset"
-	"github.com/v2rayA/v2rayA/core/v2ray/where"
 	"os/exec"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/asset"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/where"
 )
 
 func IsV2rayServiceValid() bool {

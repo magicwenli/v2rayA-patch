@@ -2,9 +2,10 @@ package cmds
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"os/exec"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 func IsCommandValid(command string) bool {

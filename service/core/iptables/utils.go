@@ -1,12 +1,13 @@
 package iptables
 
 import (
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/common/cmds"
-	"github.com/v2rayA/v2rayA/conf"
-	"golang.org/x/net/nettest"
 	"net"
 	"strconv"
+
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/common/cmds"
+	"github.com/magicwenli/v2rayA-patch/conf"
+	"golang.org/x/net/nettest"
 )
 
 func IPNet2CIDR(ipnet *net.IPNet) string {

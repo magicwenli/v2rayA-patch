@@ -2,13 +2,14 @@ package serverObj
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"net"
 	"net/url"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 func init() {

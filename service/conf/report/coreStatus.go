@@ -2,14 +2,15 @@ package report
 
 import (
 	"fmt"
-	jsoniter "github.com/json-iterator/go"
-	"github.com/v2rayA/v2rayA/core/v2ray"
-	"github.com/v2rayA/v2rayA/core/v2ray/asset"
-	"github.com/v2rayA/v2rayA/db/configure"
 	"net"
 	"strconv"
 	"strings"
 	"time"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/asset"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
 )
 
 type CoreStatusReporter struct {

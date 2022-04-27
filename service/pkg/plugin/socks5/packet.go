@@ -1,10 +1,11 @@
 package socks5
 
 import (
-	"github.com/v2rayA/v2rayA/pkg/plugin/socks"
 	"net"
 
-	"github.com/v2rayA/v2rayA/pkg/util/log"
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin/socks"
+
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 // PktConn .

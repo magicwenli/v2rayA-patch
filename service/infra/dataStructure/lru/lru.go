@@ -1,9 +1,10 @@
 package lru
 
 import (
-	"github.com/v2rayA/v2rayA/infra/dataStructure/linklist"
 	"sync"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/infra/dataStructure/linklist"
 )
 
 type LimitStrategy int

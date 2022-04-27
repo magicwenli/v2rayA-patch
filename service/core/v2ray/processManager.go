@@ -2,13 +2,14 @@ package v2ray
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/common/ntp"
-	"github.com/v2rayA/v2rayA/common/resolv"
-	"github.com/v2rayA/v2rayA/core/specialMode"
-	"github.com/v2rayA/v2rayA/core/v2ray/asset"
-	"github.com/v2rayA/v2rayA/db/configure"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/common/ntp"
+	"github.com/magicwenli/v2rayA-patch/common/resolv"
+	"github.com/magicwenli/v2rayA-patch/core/specialMode"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/asset"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 type CoreProcessManager struct {

@@ -84,6 +84,7 @@ jobs:
         done
 
         cd service
+        go mod tidy -compat=1.17
         for osarch in linux/386 linux/amd64 linux/arm linux/ppc64le linux/arm64 windows/amd64 windows/arm64 darwin/amd64 darwin/arm64; do
           export GOOS=$(echo $osarch | cut -d/ -f1)
           export GOARCH=$(echo $osarch | cut -d/ -f2)
@@ -91,7 +92,7 @@ jobs:
           if [ "$GOOS" == "windows" ]; then
             SUFFIX=".exe"
           fi
-          CGO_ENABLED=0 go build -ldflags="-X github.com/v2rayA/v2rayA/conf.Version=$VERSION -s -w" -o ../v2raya_"$GOOS"_"$GOARCH"_"$VERSION""$SUFFIX"
+          CGO_ENABLED=0 go build -ldflags="-X github.com/magicwenli/v2rayA-patch/conf.Version=$VERSION -s -w" -o ../v2raya_"$GOOS"_"$GOARCH"_"$VERSION""$SUFFIX"
         done
     - name: Rename Binaries to Friendly Filenames
       run: |
@@ -124,7 +125,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/v')
       run: |
         export FILES="install/universal/v2raya.service=/etc/systemd/system/v2raya.service install/universal/v2raya-lite.service=/usr/lib/systemd/user/v2raya-lite.service install/universal/v2raya.png=/usr/share/icons/hicolor/512x512/apps/v2raya.png install/universal/v2raya.desktop=/usr/share/applications/v2raya.desktop"
-        export PARAMS="--maintainer v2rayA --after-install install/universal/after_install.sh --after-upgrade install/universal/after_upgrade.sh --verbose -f -n $NAME -v $VERSION --url https://github.com/v2rayA/v2raya"
+        export PARAMS="--maintainer v2rayA --after-install install/universal/after_install.sh --after-upgrade install/universal/after_upgrade.sh --verbose -f -n $NAME -v $VERSION --url https://github.com/magicwenli/v2rayA-patch"
         tar -zcvf web.tar.gz web/
 
         # https://www.debian.org/releases/stretch/
@@ -179,57 +180,6 @@ jobs:
         makensis v2raya.nsi
         mv installer_windows_x64_${{ steps.prep.outputs.VERSION }}.exe $P_DIR
         cd $P_DIR
-        
-
-    - name: Import GPG key
-      if: startsWith(github.ref, 'refs/tags/v')
-      id: import_gpg
-      uses: crazy-max/ghaction-import-gpg@v4
-      with:
-        gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-        passphrase: ${{ secrets.SIGNING_PASSWORD }}
-    - name: Generate APT repository
-      if: startsWith(github.ref, 'refs/tags/v')
-      env:
-        SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
-      run: |
-        mkdir -p apt/incoming && cp -r install/debian/key install/debian/conf apt/
-        install/tool/reprepro_expect --ask-passphrase -Vb apt includedeb v2raya installer_debian_*_$VERSION.deb
-        install/tool/reprepro_expect --ask-passphrase -Vb apt export
-        cp v2raya_*_*_${{ steps.prep.outputs.VERSION }}* apt/pool/main/v/v2raya/
-        cp web.tar.gz apt/pool/main/v/v2raya/web_$VERSION.tar.gz
-        echo "apt.v2raya.mzz.pub" > apt/CNAME
-
-    - name: Deploy APT repository
-      if: startsWith(github.ref, 'refs/tags/v')
-      uses: crazy-max/ghaction-github-pages@v2.5.0
-      with:
-        repo: v2rayA/v2raya-apt
-        target_branch: master
-        build_dir: apt
-      env:
-          GH_PAT: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-    - name: Deploy Demo Site repository
-      if: startsWith(github.ref, 'refs/tags/v')
-      uses: crazy-max/ghaction-github-pages@v2.5.0
-      with:
-        repo: v2rayA/v2raya-web
-        target_branch: master
-        build_dir: web
-      env:
-          GH_PAT: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-    - name: AUR Release
-      if: startsWith(github.ref, 'refs/tags/v')
-      env:
-        P_DIR: ${{ steps.prep.outputs.P_DIR }}
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
-      run: |
-        eval $(ssh-agent)
-        echo "$SSH_PRIVATE_KEY" > ./key
-        chmod 0600 ./key
-        ./install/tool/ssh-add_expect ./key
-        bash install/aur/deploy.sh
     - name: Github Release
       if: startsWith(github.ref, 'refs/tags/v')
       uses: softprops/action-gh-release@v1
@@ -268,15 +218,3 @@ jobs:
           installer_freebsd_armv7_${{ steps.prep.outputs.VERSION }}.txz
           installer_freebsd_aarch64_${{ steps.prep.outputs.VERSION }}.txz
           installer_windows_x64_${{ steps.prep.outputs.VERSION }}.exe
-    - name: Refresh Cloudflare Cache
-      if: startsWith(github.ref, 'refs/tags/v')
-      env:
-        CF_AUTH_EMAIL: ${{ secrets.CF_AUTH_EMAIL }}
-        CF_PARGE_CACHE_AUTH_KEY: ${{ secrets.CF_PARGE_CACHE_AUTH_KEY }}
-        CF_ZONE: ${{ secrets.CF_ZONE }}
-      run: |
-        curl -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE/purge_cache" \
-          -H "X-Auth-Email: $CF_AUTH_EMAIL" \
-          -H "Authorization: Bearer $CF_PARGE_CACHE_AUTH_KEY" \
-          -H "Content-Type: application/json" \
-          --data '{"purge_everything":true}'

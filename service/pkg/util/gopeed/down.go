@@ -2,10 +2,6 @@ package gopeed
 
 import (
 	"fmt"
-	gonanoid "github.com/matoous/go-nanoid"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/pkg/util/copyfile"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"io"
 	"mime"
 	"net/http"
@@ -17,6 +13,11 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/copyfile"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	gonanoid "github.com/matoous/go-nanoid"
 )
 
 type Download interface {

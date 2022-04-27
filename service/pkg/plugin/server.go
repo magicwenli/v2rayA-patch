@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/v2rayA/v2rayA/pkg/util/log"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 // Server interface

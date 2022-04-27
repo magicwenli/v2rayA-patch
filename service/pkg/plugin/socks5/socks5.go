@@ -11,16 +11,17 @@ package socks5
 
 import (
 	"fmt"
-	"github.com/v2rayA/shadowsocksR/tools/leakybuf"
-	"github.com/v2rayA/v2rayA/pkg/plugin"
-	"github.com/v2rayA/v2rayA/pkg/plugin/socks"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"io"
 	"net"
 	"net/url"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin"
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin/socks"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/v2rayA/shadowsocksR/tools/leakybuf"
 )
 
 // Version is socks5 version number.

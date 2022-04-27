@@ -2,9 +2,10 @@ package service
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/core/v2ray"
-	"github.com/v2rayA/v2rayA/db/configure"
 	"strconv"
+
+	"github.com/magicwenli/v2rayA-patch/core/v2ray"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
 )
 
 func GetPorts() configure.Ports {

@@ -2,13 +2,14 @@ package service
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/core/v2ray"
-	"github.com/v2rayA/v2rayA/core/v2ray/service"
 	"net"
 	"net/url"
 	"strconv"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/service"
 )
 
 var UnsupportedProtocol = fmt.Errorf("the version of installed core does not support the protocol")

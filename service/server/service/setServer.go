@@ -4,9 +4,9 @@ import (
 	"sort"
 	"time"
 
-	"github.com/v2rayA/v2rayA/core/touch"
-	"github.com/v2rayA/v2rayA/db/configure"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
+	"github.com/magicwenli/v2rayA-patch/core/touch"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 func SetServer() ([]*configure.Which, error) {

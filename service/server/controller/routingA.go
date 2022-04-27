@@ -1,12 +1,13 @@
 package controller
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/v2rayA/RoutingA"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/db/configure"
 	"regexp"
 	"strings"
+
+	"github.com/gin-gonic/gin"
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	"github.com/v2rayA/RoutingA"
 )
 
 func GetRoutingA(ctx *gin.Context) {

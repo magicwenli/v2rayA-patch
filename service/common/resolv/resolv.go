@@ -1,9 +1,10 @@
 package resolv
 
 import (
-	"github.com/v2rayA/v2rayA/conf"
 	"os"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/conf"
 )
 
 const resolvConf = "/etc/resolv.conf"

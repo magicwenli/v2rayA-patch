@@ -2,10 +2,11 @@ package conf
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/common"
 	log2 "log"
 	"runtime"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/common"
 )
 
 type reportFunc func(arg []string) (report string)

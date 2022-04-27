@@ -14,20 +14,20 @@ import (
 	"github.com/gin-gonic/gin"
 	jsoniter "github.com/json-iterator/go"
 	jsonIteratorExtra "github.com/json-iterator/go/extra"
-	"github.com/v2rayA/v2rayA/common/netTools/ports"
-	"github.com/v2rayA/v2rayA/common/resolv"
-	"github.com/v2rayA/v2rayA/conf"
-	"github.com/v2rayA/v2rayA/core/serverObj"
-	"github.com/v2rayA/v2rayA/core/v2ray"
-	"github.com/v2rayA/v2rayA/core/v2ray/asset"
-	"github.com/v2rayA/v2rayA/core/v2ray/asset/dat"
-	service2 "github.com/v2rayA/v2rayA/core/v2ray/service"
-	"github.com/v2rayA/v2rayA/core/v2ray/where"
-	"github.com/v2rayA/v2rayA/db"
-	"github.com/v2rayA/v2rayA/db/configure"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
-	"github.com/v2rayA/v2rayA/server/router"
-	"github.com/v2rayA/v2rayA/server/service"
+	"github.com/magicwenli/v2rayA-patch/common/netTools/ports"
+	"github.com/magicwenli/v2rayA-patch/common/resolv"
+	"github.com/magicwenli/v2rayA-patch/conf"
+	"github.com/magicwenli/v2rayA-patch/core/serverObj"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/asset"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/asset/dat"
+	service2 "github.com/magicwenli/v2rayA-patch/core/v2ray/service"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/where"
+	"github.com/magicwenli/v2rayA-patch/db"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/magicwenli/v2rayA-patch/server/router"
+	"github.com/magicwenli/v2rayA-patch/server/service"
 )
 
 func checkEnvironment() {
@@ -207,7 +207,7 @@ func initConfigure() {
 	//db
 	if configure.IsConfigureNotExists() {
 		// need to migrate?
-		camp := []string{path.Join(conf.GetEnvironmentConfig().Config, "v2raya.json"), "/etc/v2ray/v2raya.json", "/etc/v2raya/v2raya.json"}
+		camp := []string{path.Join(conf.GetEnvironmentConfig().Config, "v2raya.json"), "/etc/v2ray/v2raya.json", "/etc/magicwenli/v2rayA-patch.json"}
 		var success bool
 		for _, jsonConfPath := range camp {
 			if _, err := os.Stat(jsonConfPath); err == nil {

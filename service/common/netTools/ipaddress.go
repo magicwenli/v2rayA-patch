@@ -2,10 +2,11 @@ package netTools
 
 import (
 	"bytes"
-	"github.com/v2rayA/v2rayA/infra/dataStructure/trie"
 	"net"
 	"strconv"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/infra/dataStructure/trie"
 )
 
 var intranet4 = []string{

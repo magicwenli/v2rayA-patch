@@ -2,13 +2,14 @@ package tcp
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/pkg/plugin"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"io"
 	"net"
 	"net/url"
 	"strings"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 // Tcp is a base tcp struct.

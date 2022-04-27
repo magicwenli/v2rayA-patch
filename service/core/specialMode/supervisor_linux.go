@@ -2,12 +2,12 @@ package specialMode
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2ray-lib/router/routercommon"
+	"github.com/magicwenli/v2rayA-patch/conf"
+	"github.com/magicwenli/v2rayA-patch/core/specialMode/infra"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 	"github.com/v2rayA/v2ray-lib/router"
-	"github.com/v2rayA/v2rayA/conf"
-	"github.com/v2rayA/v2rayA/core/specialMode/infra"
-	"github.com/v2rayA/v2rayA/db/configure"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
+	"github.com/v2rayA/v2ray-lib/router/routercommon"
 	"net"
 	"sync"
 	"time"

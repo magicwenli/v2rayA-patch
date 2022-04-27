@@ -3,12 +3,6 @@ package asset
 import (
 	"errors"
 	"fmt"
-	"github.com/adrg/xdg"
-	"github.com/muhammadmuzzammil1998/jsonc"
-	"github.com/v2rayA/v2rayA/common/files"
-	"github.com/v2rayA/v2rayA/conf"
-	"github.com/v2rayA/v2rayA/core/v2ray/where"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"io"
 	"io/fs"
 	"net/http"
@@ -17,6 +11,13 @@ import (
 	"path/filepath"
 	"runtime"
 	"time"
+
+	"github.com/adrg/xdg"
+	"github.com/magicwenli/v2rayA-patch/common/files"
+	"github.com/magicwenli/v2rayA-patch/conf"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/where"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/muhammadmuzzammil1998/jsonc"
 )
 
 func GetV2rayLocationAssetOverride() string {

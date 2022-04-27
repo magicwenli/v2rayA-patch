@@ -4,13 +4,14 @@ import (
 	"bytes"
 	"encoding/hex"
 	"fmt"
-	jsoniter "github.com/json-iterator/go"
-	"github.com/tidwall/gjson"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/db"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"sort"
 	"strings"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/db"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/tidwall/gjson"
 )
 
 type Configure struct {

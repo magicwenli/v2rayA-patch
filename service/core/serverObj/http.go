@@ -1,10 +1,11 @@
 package serverObj
 
 import (
-	"github.com/v2rayA/v2rayA/core/coreObj"
 	"net"
 	"net/url"
 	"strconv"
+
+	"github.com/magicwenli/v2rayA-patch/core/coreObj"
 )
 
 func init() {

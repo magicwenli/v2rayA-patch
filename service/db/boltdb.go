@@ -1,13 +1,14 @@
 package db
 
 import (
-	"github.com/boltdb/bolt"
-	"github.com/v2rayA/v2rayA/conf"
-	"github.com/v2rayA/v2rayA/pkg/util/copyfile"
 	"log"
 	"os"
 	"path/filepath"
 	"sync"
+
+	"github.com/boltdb/bolt"
+	"github.com/magicwenli/v2rayA-patch/conf"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/copyfile"
 )
 
 var once sync.Once

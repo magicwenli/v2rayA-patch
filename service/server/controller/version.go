@@ -1,13 +1,14 @@
 package controller
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/conf"
-	"github.com/v2rayA/v2rayA/core/v2ray/asset/dat"
-	"github.com/v2rayA/v2rayA/core/v2ray/service"
-	"github.com/v2rayA/v2rayA/core/v2ray/where"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/conf"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/asset/dat"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/service"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/where"
 )
 
 func GetVersion(ctx *gin.Context) {

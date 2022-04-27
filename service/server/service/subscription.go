@@ -9,19 +9,20 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/common/httpClient"
-	"github.com/v2rayA/v2rayA/common/resolv"
-	"github.com/v2rayA/v2rayA/core/serverObj"
-	"github.com/v2rayA/v2rayA/core/touch"
-	"github.com/v2rayA/v2rayA/db/configure"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"net"
 	"net/http"
 	"net/url"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/common/httpClient"
+	"github.com/magicwenli/v2rayA-patch/common/resolv"
+	"github.com/magicwenli/v2rayA-patch/core/serverObj"
+	"github.com/magicwenli/v2rayA-patch/core/touch"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 //func ResolveSubscription(source string) (infos []*nodeData.NodeData, err error) {

@@ -3,10 +3,11 @@ package tls
 import (
 	"crypto/tls"
 	"fmt"
-	"github.com/v2rayA/v2rayA/pkg/plugin"
 	"net"
 	"net/url"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin"
 )
 
 // Tls is a base Tls struct

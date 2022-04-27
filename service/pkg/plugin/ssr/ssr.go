@@ -2,17 +2,18 @@ package ssr
 
 import (
 	"fmt"
+	"net"
+	"net/url"
+	"strconv"
+
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 	shadowsocksr "github.com/v2rayA/shadowsocksR"
 	"github.com/v2rayA/shadowsocksR/obfs"
 	"github.com/v2rayA/shadowsocksR/protocol"
 	"github.com/v2rayA/shadowsocksR/ssr"
 	"github.com/v2rayA/shadowsocksR/streamCipher"
 	"github.com/v2rayA/shadowsocksR/tools/socks"
-	"github.com/v2rayA/v2rayA/pkg/plugin"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
-	"net"
-	"net/url"
-	"strconv"
 )
 
 // SSR struct.

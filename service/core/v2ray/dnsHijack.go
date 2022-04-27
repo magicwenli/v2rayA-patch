@@ -2,9 +2,10 @@ package v2ray
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/core/specialMode"
 	"os"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/core/specialMode"
 )
 
 const (

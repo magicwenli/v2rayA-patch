@@ -2,16 +2,17 @@ package httpClient
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/core/v2ray"
-	"github.com/v2rayA/v2rayA/db/configure"
-	proxyWithHttp2 "github.com/v2rayA/v2rayA/pkg/util/proxyWithHttp"
 	"net"
 	"net/http"
 	"net/url"
 	"os/exec"
 	"strconv"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	proxyWithHttp2 "github.com/magicwenli/v2rayA-patch/pkg/util/proxyWithHttp"
 )
 
 func GetHttpClientWithProxy(proxyURL string) (client *http.Client, err error) {

@@ -2,10 +2,11 @@ package db
 
 import (
 	"fmt"
+
 	"github.com/boltdb/bolt"
 	jsoniter "github.com/json-iterator/go"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 func Get(bucket string, key string, val interface{}) (err error) {

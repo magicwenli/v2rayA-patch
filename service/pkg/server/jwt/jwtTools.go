@@ -1,13 +1,14 @@
 package jwt
 
 import (
+	"strings"
+	"time"
+
 	"github.com/dgrijalva/jwt-go/v4"
 	"github.com/dgrijalva/jwt-go/v4/request"
 	"github.com/gin-gonic/gin"
+	"github.com/magicwenli/v2rayA-patch/common"
 	"github.com/pkg/errors"
-	"github.com/v2rayA/v2rayA/common"
-	"strings"
-	"time"
 )
 
 // stripBearerPrefixFromTokenString strips 'Bearer ' prefix from bearer token string

@@ -10,10 +10,11 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
-	"github.com/v2rayA/v2rayA/pkg/plugin"
-	"github.com/v2rayA/v2rayA/pkg/plugin/socks"
 	"net"
 	"net/url"
+
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin"
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin/socks"
 )
 
 // Trojan is a base trojan struct

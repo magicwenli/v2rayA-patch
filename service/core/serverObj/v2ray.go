@@ -10,11 +10,11 @@ import (
 	"strings"
 
 	jsoniter "github.com/json-iterator/go"
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/core/coreObj"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/service"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 	"github.com/tidwall/gjson"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/core/coreObj"
-	"github.com/v2rayA/v2rayA/core/v2ray/service"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 )
 
 func init() {

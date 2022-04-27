@@ -2,8 +2,9 @@ package httpClient
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/conf"
 	"net/http"
+
+	"github.com/magicwenli/v2rayA-patch/conf"
 )
 
 func HttpGetUsingSpecificClient(c *http.Client, url string) (resp *http.Response, err error) {

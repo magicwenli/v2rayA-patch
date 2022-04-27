@@ -2,10 +2,11 @@ package ss
 
 import (
 	"fmt"
-	ss "github.com/shadowsocks/go-shadowsocks2/core"
-	"github.com/v2rayA/v2rayA/pkg/plugin"
 	"net"
 	"net/url"
+
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin"
+	ss "github.com/shadowsocks/go-shadowsocks2/core"
 )
 
 // Shadowsocks is a base shadowsocks struct

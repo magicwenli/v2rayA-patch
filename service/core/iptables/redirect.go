@@ -2,8 +2,9 @@ package iptables
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/common/cmds"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/common/cmds"
 )
 
 type redirect struct{}
@@ -76,7 +77,7 @@ ip6tables -w 2 -t nat -I OUTPUT -p tcp -j V2RAY
 `
 	}
 	return Setter{
-		Cmds:      commands,
+		Cmds: commands,
 	}
 }
 
@@ -96,6 +97,6 @@ ip6tables -w 2 -t nat -X V2RAY
 `
 	}
 	return Setter{
-		Cmds:      commands,
+		Cmds: commands,
 	}
 }

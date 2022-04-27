@@ -1,11 +1,12 @@
 package iptables
 
 import (
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/common/cmds"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/common/cmds"
 )
 
 // http://briteming.hatenablog.com/entry/2019/06/18/175518

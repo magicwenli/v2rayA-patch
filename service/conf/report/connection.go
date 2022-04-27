@@ -2,11 +2,12 @@ package report
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/conf"
-	"github.com/v2rayA/v2rayA/core/ipforward"
-	"github.com/v2rayA/v2rayA/core/v2ray/where"
-	"github.com/v2rayA/v2rayA/db/configure"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/conf"
+	"github.com/magicwenli/v2rayA-patch/core/ipforward"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/where"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
 )
 
 func init() {

@@ -2,11 +2,12 @@ package controller
 
 import (
 	"fmt"
+
 	"github.com/gin-gonic/gin"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/db/configure"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
-	"github.com/v2rayA/v2rayA/server/service"
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/magicwenli/v2rayA-patch/server/service"
 )
 
 func PostConnection(ctx *gin.Context) {

@@ -2,14 +2,15 @@ package conf
 
 import (
 	"fmt"
-	"github.com/stevenroose/gonfig"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	log2 "log"
 	"os"
 	"path/filepath"
 	"strings"
 	"sync"
+
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/stevenroose/gonfig"
 )
 
 type Params struct {

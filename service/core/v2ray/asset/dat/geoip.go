@@ -2,10 +2,11 @@ package dat
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/core/v2ray/asset"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"os"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/asset"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 func UpdateLocalGeoIP() (err error) {

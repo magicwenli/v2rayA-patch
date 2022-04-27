@@ -1,19 +1,20 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
-	_ "github.com/v2rayA/v2rayA/conf/report"
-	_ "github.com/v2rayA/v2rayA/pkg/plugin/pingtunnel"
-	_ "github.com/v2rayA/v2rayA/pkg/plugin/simpleobfs"
-	_ "github.com/v2rayA/v2rayA/pkg/plugin/socks5"
-	_ "github.com/v2rayA/v2rayA/pkg/plugin/ss"
-	_ "github.com/v2rayA/v2rayA/pkg/plugin/ssr"
-	_ "github.com/v2rayA/v2rayA/pkg/plugin/tcp"
-	_ "github.com/v2rayA/v2rayA/pkg/plugin/tls"
-	_ "github.com/v2rayA/v2rayA/pkg/plugin/trojanc"
-	_ "github.com/v2rayA/v2rayA/pkg/plugin/ws"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"runtime"
+
+	"github.com/gin-gonic/gin"
+	_ "github.com/magicwenli/v2rayA-patch/conf/report"
+	_ "github.com/magicwenli/v2rayA-patch/pkg/plugin/pingtunnel"
+	_ "github.com/magicwenli/v2rayA-patch/pkg/plugin/simpleobfs"
+	_ "github.com/magicwenli/v2rayA-patch/pkg/plugin/socks5"
+	_ "github.com/magicwenli/v2rayA-patch/pkg/plugin/ss"
+	_ "github.com/magicwenli/v2rayA-patch/pkg/plugin/ssr"
+	_ "github.com/magicwenli/v2rayA-patch/pkg/plugin/tcp"
+	_ "github.com/magicwenli/v2rayA-patch/pkg/plugin/tls"
+	_ "github.com/magicwenli/v2rayA-patch/pkg/plugin/trojanc"
+	_ "github.com/magicwenli/v2rayA-patch/pkg/plugin/ws"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 )
 
 func main() {

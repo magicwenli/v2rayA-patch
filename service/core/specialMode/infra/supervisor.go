@@ -2,14 +2,15 @@ package infra
 
 import (
 	"fmt"
+	"sync"
+	"time"
+
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcapgo"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 	"github.com/v2fly/v2ray-core/v4/common/strmatcher"
 	v2router "github.com/v2rayA/v2ray-lib/router"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
-	"sync"
-	"time"
 )
 
 type DnsSupervisor struct {

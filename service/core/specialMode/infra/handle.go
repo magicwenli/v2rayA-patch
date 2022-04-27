@@ -2,17 +2,18 @@ package infra
 
 import (
 	"fmt"
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/pcapgo"
-	"github.com/v2fly/v2ray-core/v4/common/strmatcher"
-	v2router "github.com/v2rayA/v2ray-lib/router"
-	"github.com/v2rayA/v2rayA/common/netTools"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
-	"golang.org/x/net/dns/dnsmessage"
 	"net"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/google/gopacket"
+	"github.com/google/gopacket/pcapgo"
+	"github.com/magicwenli/v2rayA-patch/common/netTools"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/v2fly/v2ray-core/v4/common/strmatcher"
+	v2router "github.com/v2rayA/v2ray-lib/router"
+	"golang.org/x/net/dns/dnsmessage"
 )
 
 type handle struct {

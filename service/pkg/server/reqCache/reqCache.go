@@ -1,9 +1,10 @@
 package reqCache
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/v2rayA/v2rayA/common"
 	"sync"
+
+	"github.com/gin-gonic/gin"
+	"github.com/magicwenli/v2rayA-patch/common"
 )
 
 type reqGlen struct {

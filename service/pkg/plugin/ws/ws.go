@@ -2,12 +2,13 @@ package ws
 
 import (
 	"fmt"
-	"github.com/gorilla/websocket"
-	"github.com/v2rayA/v2rayA/pkg/plugin"
 	"net"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/gorilla/websocket"
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin"
 )
 
 // Ws is a base Ws struct

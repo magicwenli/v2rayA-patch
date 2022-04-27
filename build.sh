@@ -17,4 +17,4 @@ do
     gzip -9 $file
   fi
 done
-cd "$SHELL_FOLDER"/service && CGO_ENABLED=0 go build -ldflags "-X github.com/v2rayA/v2rayA/conf.Version=$version -s -w" -o "$CWD"/v2raya
+cd "$SHELL_FOLDER"/service && CGO_ENABLED=0 go build -ldflags "-X github.com/magicwenli/v2rayA-patch/conf.Version=$version -s -w" -o "$CWD"/v2raya

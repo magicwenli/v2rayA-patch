@@ -1,8 +1,9 @@
 package common
 
 import (
-	"github.com/v2rayA/v2rayA/db/configure"
 	"testing"
+
+	"github.com/magicwenli/v2rayA-patch/db/configure"
 )
 
 func TestUrlEncoded(t *testing.T) {

@@ -2,9 +2,10 @@ package serverObj
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/core/coreObj"
-	"github.com/v2rayA/v2rayA/core/v2ray/where"
 	"net/url"
+
+	"github.com/magicwenli/v2rayA-patch/core/coreObj"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/where"
 )
 
 var InvalidParameterErr = fmt.Errorf("invalid parameters")

@@ -2,7 +2,8 @@ package service
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/db/configure"
+
+	"github.com/magicwenli/v2rayA-patch/db/configure"
 )
 
 func GetSharingAddress(w *configure.Which) (addr string, err error) {

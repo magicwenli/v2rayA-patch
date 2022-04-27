@@ -5,15 +5,16 @@ package pingtunnel
 
 import (
 	"fmt"
-	"github.com/mzz2017/go-engine/src/loggo"
-	"github.com/mzz2017/go-engine/src/pingtunnel"
-	"github.com/v2rayA/v2rayA/conf"
-	"github.com/v2rayA/v2rayA/pkg/plugin"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"net"
 	"net/url"
 	"strconv"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/conf"
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/mzz2017/go-engine/src/loggo"
+	"github.com/mzz2017/go-engine/src/pingtunnel"
 )
 
 type PingTunnel struct {

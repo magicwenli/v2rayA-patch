@@ -2,10 +2,10 @@ package configure
 
 import (
 	jsoniter "github.com/json-iterator/go"
+	"github.com/magicwenli/v2rayA-patch/core/serverObj"
+	"github.com/magicwenli/v2rayA-patch/core/vmessInfo"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
 	"github.com/tidwall/gjson"
-	"github.com/v2rayA/v2rayA/core/serverObj"
-	"github.com/v2rayA/v2rayA/core/vmessInfo"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 )
 
 type ServerRawV2 struct {

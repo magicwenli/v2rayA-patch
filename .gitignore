@@ -33,3 +33,5 @@ node_modules
 /PKGBUILD
 /go.mod
 /go.sum
+.DS_Store
+service/go_build_github_com_v2rayA_v2rayA

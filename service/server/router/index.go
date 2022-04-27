@@ -15,13 +15,13 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/conf"
-	"github.com/v2rayA/v2rayA/db/configure"
-	"github.com/v2rayA/v2rayA/pkg/server/jwt"
-	"github.com/v2rayA/v2rayA/pkg/server/reqCache"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
-	"github.com/v2rayA/v2rayA/server/controller"
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/conf"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	"github.com/magicwenli/v2rayA-patch/pkg/server/jwt"
+	"github.com/magicwenli/v2rayA-patch/pkg/server/reqCache"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/magicwenli/v2rayA-patch/server/controller"
 	"github.com/vearutop/statigz"
 )
 

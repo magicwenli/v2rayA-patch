@@ -1,10 +1,11 @@
 package infra
 
 import (
-	"github.com/v2rayA/v2rayA/pkg/plugin"
 	"net"
 	"syscall"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin"
 )
 
 func newDialer(laddr string, lport uint32, timeout time.Duration) (dialer *net.Dialer) {

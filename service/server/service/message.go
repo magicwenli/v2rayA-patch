@@ -1,10 +1,11 @@
 package service
 
 import (
-	"github.com/gorilla/websocket"
-	"github.com/v2rayA/v2rayA/core/v2ray"
 	"sync"
 	"time"
+
+	"github.com/gorilla/websocket"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray"
 )
 
 const (

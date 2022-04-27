@@ -4,13 +4,6 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/shirou/gopsutil/v3/mem"
-	"github.com/v2rayA/v2rayA/core/serverObj"
-	"github.com/v2rayA/v2rayA/core/v2ray/asset"
-	"github.com/v2rayA/v2rayA/core/v2ray/service"
-	"github.com/v2rayA/v2rayA/core/v2ray/where"
-	"github.com/v2rayA/v2rayA/db/configure"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"net"
 	"os"
 	"os/exec"
@@ -19,6 +12,14 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/core/serverObj"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/asset"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/service"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/where"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/shirou/gopsutil/v3/mem"
 )
 
 var NoConnectedServerErr = fmt.Errorf("no selected servers")
@@ -204,8 +205,8 @@ func StartCoreProcess(ctx context.Context) (*os.Process, error) {
 	assetDir := asset.GetV2rayLocationAssetOverride()
 	env := append(
 		[]string{
-			"V2RAY_LOCATION_ASSET="+assetDir,
-			"XRAY_LOCATION_ASSET="+assetDir,
+			"V2RAY_LOCATION_ASSET=" + assetDir,
+			"XRAY_LOCATION_ASSET=" + assetDir,
 		},
 		os.Environ()...,
 	)

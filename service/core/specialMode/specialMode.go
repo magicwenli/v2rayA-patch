@@ -2,15 +2,16 @@ package specialMode
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/common/netTools/netstat"
-	"github.com/v2rayA/v2rayA/common/netTools/ports"
-	"github.com/v2rayA/v2rayA/conf"
-	"github.com/v2rayA/v2rayA/db/configure"
 	"net"
 	"os"
 	"strconv"
 	"sync"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/common/netTools/netstat"
+	"github.com/magicwenli/v2rayA-patch/common/netTools/ports"
+	"github.com/magicwenli/v2rayA-patch/conf"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
 )
 
 var (

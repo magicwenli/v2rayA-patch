@@ -2,9 +2,10 @@ package service
 
 import (
 	"fmt"
-	"github.com/v2rayA/v2rayA/core/serverObj"
 	"net/url"
 	"strings"
+
+	"github.com/magicwenli/v2rayA-patch/core/serverObj"
 )
 
 var EmptyAddressErr = fmt.Errorf("ResolveURL error: empty address")

@@ -9,8 +9,8 @@ import (
 	"unsafe"
 
 	"github.com/gin-gonic/gin"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/conf"
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/conf"
 )
 
 type getLogQuery struct {

@@ -6,24 +6,6 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
-	jsoniter "github.com/json-iterator/go"
-	"github.com/mohae/deepcopy"
-	"github.com/v2rayA/RoutingA"
-	"github.com/v2rayA/v2rayA/common"
-	"github.com/v2rayA/v2rayA/common/netTools/netstat"
-	"github.com/v2rayA/v2rayA/common/netTools/ports"
-	"github.com/v2rayA/v2rayA/common/resolv"
-	"github.com/v2rayA/v2rayA/conf"
-	"github.com/v2rayA/v2rayA/core/coreObj"
-	"github.com/v2rayA/v2rayA/core/iptables"
-	"github.com/v2rayA/v2rayA/core/serverObj"
-	"github.com/v2rayA/v2rayA/core/specialMode"
-	"github.com/v2rayA/v2rayA/core/v2ray/asset"
-	"github.com/v2rayA/v2rayA/core/v2ray/service"
-	"github.com/v2rayA/v2rayA/core/v2ray/where"
-	"github.com/v2rayA/v2rayA/db/configure"
-	"github.com/v2rayA/v2rayA/pkg/plugin"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"net"
 	"net/url"
 	"os"
@@ -33,6 +15,25 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/magicwenli/v2rayA-patch/common"
+	"github.com/magicwenli/v2rayA-patch/common/netTools/netstat"
+	"github.com/magicwenli/v2rayA-patch/common/netTools/ports"
+	"github.com/magicwenli/v2rayA-patch/common/resolv"
+	"github.com/magicwenli/v2rayA-patch/conf"
+	"github.com/magicwenli/v2rayA-patch/core/coreObj"
+	"github.com/magicwenli/v2rayA-patch/core/iptables"
+	"github.com/magicwenli/v2rayA-patch/core/serverObj"
+	"github.com/magicwenli/v2rayA-patch/core/specialMode"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/asset"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/service"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/where"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	"github.com/magicwenli/v2rayA-patch/pkg/plugin"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/mohae/deepcopy"
+	"github.com/v2rayA/RoutingA"
 )
 
 type Template struct {
@@ -534,7 +535,7 @@ func (t *Template) AppendRoutingRuleByMode(mode configure.RulePortMode, inbounds
 				Type:        "field",
 				OutboundTag: "proxy",
 				InboundTag:  deepcopy.Copy(inbounds).([]string),
-				// https://github.com/v2rayA/v2rayA/issues/285
+				// https://github.com/magicwenli/v2rayA-patch/issues/285
 				Domain: []string{"geosite:google"},
 			},
 			coreObj.RoutingRule{
@@ -976,7 +977,7 @@ func (t *Template) appendDNSOutbound() {
 	t.Outbounds = append(t.Outbounds, coreObj.OutboundObject{
 		Tag:      "dns-out",
 		Protocol: "dns",
-		// Fallback DNS for non-A/AAAA/CNAME requests. https://github.com/v2rayA/v2rayA/issues/188
+		// Fallback DNS for non-A/AAAA/CNAME requests. https://github.com/magicwenli/v2rayA-patch/issues/188
 		Settings: coreObj.Settings{Address: "119.29.29.29", Port: 53, Network: "udp"},
 	})
 }
@@ -1564,7 +1565,7 @@ func NewTemplate(serverInfos []serverInfo, setting *configure.Setting) (t *Templ
 
 	t.updatePrivateRouting()
 
-	// add spare tire outbound routing. Fix: https://github.com/v2rayA/v2rayA/issues/447
+	// add spare tire outbound routing. Fix: https://github.com/magicwenli/v2rayA-patch/issues/447
 	t.Routing.Rules = append(t.Routing.Rules, coreObj.RoutingRule{Type: "field", Network: "tcp,udp", OutboundTag: "proxy"})
 
 	// Set group routing. This should be put in the end of routing setters.

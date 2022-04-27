@@ -4,19 +4,20 @@ import (
 	libSha256 "crypto/sha256"
 	"encoding/hex"
 	"fmt"
-	"github.com/tidwall/gjson"
-	"github.com/v2rayA/v2rayA/common/files"
-	"github.com/v2rayA/v2rayA/common/httpClient"
-	"github.com/v2rayA/v2rayA/core/v2ray"
-	"github.com/v2rayA/v2rayA/core/v2ray/asset"
-	"github.com/v2rayA/v2rayA/db/configure"
-	"github.com/v2rayA/v2rayA/pkg/util/log"
 	"io"
 	"net/http"
 	"os"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/magicwenli/v2rayA-patch/common/files"
+	"github.com/magicwenli/v2rayA-patch/common/httpClient"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray"
+	"github.com/magicwenli/v2rayA-patch/core/v2ray/asset"
+	"github.com/magicwenli/v2rayA-patch/db/configure"
+	"github.com/magicwenli/v2rayA-patch/pkg/util/log"
+	"github.com/tidwall/gjson"
 )
 
 type GFWList struct {
